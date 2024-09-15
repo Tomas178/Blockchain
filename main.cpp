@@ -1,5 +1,9 @@
 #include "funkcijos.h"
 
+int norimas_programos_veikimas;
+string simboliu_seka;
+string failo_pavadinimas;
+
 int main() {
     cout << "Pasirinkite programos veikima:\n1. Vedimas rankiniu budu.\n2. Skaitymas is failo" << endl;
     cin >> norimas_programos_veikimas;
@@ -20,4 +24,8 @@ int main() {
                 cout << "Ivyko klaida: " << err.what() << endl;
             }
     }
+
+    cout << Maisos_funkcija(simboliu_seka) << endl;
+    
+    return 0;
 }
