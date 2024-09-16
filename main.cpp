@@ -25,6 +25,7 @@ int main() {
             }
     }
 
+    cout << ConvertToBinary(simboliu_seka) << endl;
     cout << Maisos_funkcija(simboliu_seka) << endl;
     
     return 0;
