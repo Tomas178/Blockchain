@@ -19,8 +19,8 @@ int main() {
         case 2:
             try{
                 cout << "Iveskite failo pavadinima: ";
-                cin >> simboliu_seka;
-                Failo_apdorojimas(simboliu_seka);
+                cin >> failo_pavadinimas;
+                simboliu_seka = Failo_apdorojimas(failo_pavadinimas);
             } catch(const std::exception &err){
                 cout << "Ivyko klaida: " << err.what() << endl;
             }

@@ -1,20 +1,19 @@
 #include "funkcijos.h"
 
-void Failo_apdorojimas(string failo_pavadinimas){
+string Failo_apdorojimas(string failo_pavadinimas){
     ifstream DF(failo_pavadinimas);
-    failo_pavadinimas.clear();
+    failo_pavadinimas = "";
 
     if(!DF.is_open()){
         __throw_runtime_error("Nepavyko atidaryti failo");
     }
 
     string line;
-    getline(DF, line);
     while(getline(DF, line)){
-        istringstream iss;
-        iss >> failo_pavadinimas;
+        failo_pavadinimas += line;
     }
     DF.close();
+    return failo_pavadinimas;
 }
 
 string Maisos_funkcija(string simboliu_seka){
