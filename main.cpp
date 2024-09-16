@@ -19,13 +19,15 @@ int main() {
         case 2:
             try{
                 cout << "Iveskite failo pavadinima: ";
-                cin >> failo_pavadinimas;
+                cin >> simboliu_seka;
+                Failo_apdorojimas(simboliu_seka);
             } catch(const std::exception &err){
                 cout << "Ivyko klaida: " << err.what() << endl;
             }
     }
 
-    cout << ConvertToBinary(simboliu_seka) << endl;
+    //cout << ConvertToBinary(simboliu_seka) << endl;
+    //cout << Add_More_Bits(simboliu_seka) << endl;
     cout << Maisos_funkcija(simboliu_seka) << endl;
     
     return 0;
