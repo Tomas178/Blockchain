@@ -30,7 +30,8 @@ void poru_hashinimas_6_uzduociai(){
     cout << "Poru hashinimas atliktas sekmingai." << endl;
 }
 
-bool Tikrinti_5_uzduoti(string failas){
+void Tikrinti_5_uzduoti(){
+    string failas = "6Uzduotis_uzhashinta.txt";
     ifstream DF(failas);
     string line;
     int linecounter = 0;
@@ -42,11 +43,9 @@ bool Tikrinti_5_uzduoti(string failas){
         iss >> hash1 >> hash2;
         if(hash1 == hash2){
             cout << linecounter << " eiluteje sutapo hash'ai." << endl;
-            return false;
         }
     }
     cout << "Hash'ai nesutapo." << endl;	
-    return true;
 }
 
 string Tikrinti_6_uzduoti_procentaliai(){

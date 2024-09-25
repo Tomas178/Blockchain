@@ -35,7 +35,7 @@ int main() {
             break;
         case 4:
             try{
-                Tikrinti_5_uzduoti("5Uzduotis.txt");	
+                Tikrinti_5_uzduoti();	
             } catch(const std::exception &err){
                 cout << "Ivyko klaida: " << err.what() << endl;
             }
