@@ -16,51 +16,40 @@ string Failo_apdorojimas(string failo_pavadinimas){
     return failo_pavadinimas;
 }
 
-string BinaryToHex(const string& binary){
-    stringstream HEX;
-    unsigned long long int HexValue = 0;
-
-    for (size_t i = 0; i < binary.size(); i += 4) {
-        string binaryChunk = binary.substr(i, 4); 
-        HexValue = bitset<4>(binaryChunk).to_ulong();   
-        HEX << hex << HexValue;                  
-    }
-
-    return HEX.str();
-}
-
 void PaddedInput(string& simboliu_seka){
     simboliu_seka += "11111";
-    if(simboliu_seka.length() % 512 != 448){
-        for(int i = 0; i < 448 - (simboliu_seka.length() % 512); i++){
-            simboliu_seka += "0";
-        }
-    }
 }
 
 
-string Maisos_funkcija(string simboliu_seka){
+string Maisos_funkcija(string& simboliu_seka){
 
     const unsigned int size = simboliu_seka.length();
-    vector<bitset<8>> bit_map(size);
+    bitset<8> bit_map(size);
     string nauja_simboliu_seka;
+    const unsigned int hash_parts = 4;
 
-    for (unsigned int i = 0; i < size; i++) {
-        bit_map[i] = simboliu_seka[i];
-        nauja_simboliu_seka += bit_map[i].to_string();
+    unsigned long long hashes[hash_parts] = {
+        0x6a09e667f3bcc908,
+        0x9b05688c2b3e6c1f,
+        0x1f83d9abfb41bd6b,
+        0x5be0cd19137e2179
+    };
+
+    PaddedInput(simboliu_seka);
+
+    for(char c : simboliu_seka){
+        bit_map = bitset<8>(c);
+        bit_map.flip();
+        for(int i = 0; i < hash_parts; i++){
+            hashes[i] ^= bit_map.to_ulong() * 0x9e3779b97f4a7c15;
+            hashes[i] = (hashes[i] << 32) | (hashes[i] >> 32);
+        }
     }
-    //nauja_simboliu_seka += "11111";
 
-    PaddedInput(nauja_simboliu_seka);
-    cout << nauja_simboliu_seka << endl;
+    ostringstream oss;
+    for(int i = 0; i < hash_parts; i++){
+        oss << hex << setw(16) << setfill('0') << hashes[i];
+    }
 
-    string HexString = BinaryToHex(nauja_simboliu_seka);
-
-    cout << "Bitu skaicius: "<< nauja_simboliu_seka.size() << endl;
-    cout << HexString << endl;
-
-
-    //bitset<32> bit_map[simboliu_seka.length()];
-    //bitset<32> copy;
-    return "hello";
+    return oss.str();
 }
