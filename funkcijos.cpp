@@ -1,5 +1,76 @@
 #include "funkcijos.h"
 
+void poru_hashinimas_5_uzduociai(){
+    string failas = "4uzduotis.txt";
+    ifstream DF(failas);
+    ofstream RF("5Uzduotis.txt");
+    string line,zodis1, zodis2, hash1, hash2;
+    while(getline(DF, line)){
+        istringstream iss(line);
+        iss >> zodis1 >> zodis2;
+        hash1 = Maisos_funkcija(zodis1);
+        hash2 = Maisos_funkcija(zodis2);
+        RF << hash1 << " " << hash2 << endl;
+    }
+    cout << "Poru hashinimas atliktas sekmingai." << endl;
+}
+
+void poru_hashinimas_6_uzduociai(){
+    string failas = "6uzduotis.txt";
+    ifstream DF(failas);
+    ofstream RF("6Uzduotis_uzhashinta.txt");
+    string line, zodis1, zodis2, hash1, hash2;
+    while(getline(DF, line)){
+        istringstream iss(line);
+        iss >> zodis1 >> zodis2;
+        hash1 = Maisos_funkcija(zodis1);
+        hash2 = Maisos_funkcija(zodis2);
+        RF << hash1 << " " << hash2 << endl;
+    }
+    cout << "Poru hashinimas atliktas sekmingai." << endl;
+}
+
+bool Tikrinti_5_uzduoti(string failas){
+    ifstream DF(failas);
+    string line;
+    int linecounter = 0;
+    string hash1;
+    string hash2;
+    while(getline(DF, line)){
+        istringstream iss(line);
+        linecounter++;
+        iss >> hash1 >> hash2;
+        if(hash1 == hash2){
+            cout << linecounter << " eiluteje sutapo hash'ai." << endl;
+            return false;
+        }
+    }
+    cout << "Hash'ai nesutapo." << endl;	
+    return true;
+}
+
+string Tikrinti_6_uzduoti_procentaliai(){
+    string failas = "6Uzduotis_uzhashinta.txt";
+    ofstream RF("6Uzduoties_uzhashinimas_procentaliai_hexu_lygmenyje.txt");
+    ifstream DF(failas);
+    string line, hash1, hash2;
+    int linecounter = 0;
+    while(getline(DF, line)){
+        double sutape_simboliai = 0.0;
+        istringstream iss(line);
+        linecounter++;
+        iss >> hash1 >> hash2;
+        for(int i = 0; i < hash1.length(); i++){
+            if(hash1[i] == hash2[i]){
+                sutape_simboliai++;
+            }
+        }
+        if(sutape_simboliai > 0.0)
+        RF << linecounter << " Eiluteje sutapo " << fixed << setprecision(2) << sutape_simboliai/64*100 << "% simboliu." << endl;
+    }
+    return "Viskas OK";
+}
+
 string Failo_apdorojimas(string failo_pavadinimas){
     ifstream DF(failo_pavadinimas);
     failo_pavadinimas = "";
@@ -11,8 +82,10 @@ string Failo_apdorojimas(string failo_pavadinimas){
     string line;
     while(getline(DF, line)){
         failo_pavadinimas += line;
+        //cout << line << endl;
     }
     DF.close();
+    //cout << failo_pavadinimas;
     return failo_pavadinimas;
 }
 

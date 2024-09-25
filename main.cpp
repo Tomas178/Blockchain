@@ -5,7 +5,8 @@ string simboliu_seka;
 string failo_pavadinimas;
 
 int main() {
-    cout << "Pasirinkite programos veikima:\n1. Vedimas rankiniu budu.\n2. Skaitymas is failo" << endl;
+    cout << "Pasirinkite programos veikima:\n1. Vedimas rankiniu budu.\n2. Skaitymas is failo.\n3. 5 Uzduotis.\n4. Tikrinti 5 uzduoti.\n5. 6 Uzduotis.\n";
+    cout << "6. Tikrinti 6 uzduoti procentailiai." << endl;
     cin >> norimas_programos_veikimas;
     switch(norimas_programos_veikimas){
         case 1: 
@@ -24,14 +25,43 @@ int main() {
             } catch(const std::exception &err){
                 cout << "Ivyko klaida: " << err.what() << endl;
             }
+            break;
+        case 3:
+            try{
+                poru_hashinimas_5_uzduociai();
+            } catch(const std::exception &err){
+                cout << "Ivyko klaida: " << err.what() << endl;
+            }
+            break;
+        case 4:
+            try{
+                Tikrinti_5_uzduoti("5Uzduotis.txt");	
+            } catch(const std::exception &err){
+                cout << "Ivyko klaida: " << err.what() << endl;
+            }
+            break;
+        case 5: 
+            try{
+                poru_hashinimas_6_uzduociai();
+            } catch(const std::exception &err){
+                cout << "Ivyko klaida: " << err.what() << endl;
+            }
+            break;
+        case 6:
+            try{
+                Tikrinti_6_uzduoti_procentaliai();
+            } catch(const std::exception &err){
+                cout << "Ivyko klaida: " << err.what() << endl;
+            }
+            break;
     }
 
     //cout << ConvertToBinary(simboliu_seka) << endl;
     //cout << Add_More_Bits(simboliu_seka) << endl;
     const auto start = chrono::high_resolution_clock::now();
-    cout << Maisos_funkcija(simboliu_seka) << endl;
+    //cout << Maisos_funkcija(simboliu_seka) << endl;
     const auto end = chrono::high_resolution_clock::now();
-    cout << "Programos vykdymo laikas: " << chrono::duration_cast<chrono::milliseconds>(end - start).count() << "ms" << endl;
+    cout << "Programos vykdymo laikas: " << chrono::duration_cast<chrono::milliseconds>(end - start).count()/1000 << "s" << endl;
     
     return 0;
 }

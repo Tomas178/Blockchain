@@ -12,6 +12,10 @@ using namespace std;
 
 string Maisos_funkcija(string& simboliu_seka);
 string Failo_apdorojimas(string failo_pavadinimas);
+void poru_hashinimas_5_uzduociai();
+void poru_hashinimas_6_uzduociai();
+bool Tikrinti_5_uzduoti(string failas);
+string Tikrinti_6_uzduoti_procentaliai();
 void PaddedInput(string& simboliu_seka);
 
 extern int norimas_programos_veikimas;
