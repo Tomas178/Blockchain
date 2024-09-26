@@ -40,7 +40,6 @@ string Maisos_funkcija(string& simboliu_seka){
 ```
 - **string& simboliu_seka** – Tekstas, kuris yra hash'inamas.
 - **bitset<8> bit_map(size)** – Kiekvienas simbolis verčiamas į 8 bitų seką, bit_map(size) talpina simboliu_seka.length()*8 bitų.
-– Keturios atsitiktines reikšmės po 64 bit'us.
 ```cpp
     unsigned long long hashes[hash_parts] = {
         0x6a09e667f3bcc908,
