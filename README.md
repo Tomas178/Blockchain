@@ -36,7 +36,7 @@ string Maisos_funkcija(string& simboliu_seka){
 
     return oss.str();
 }
-
+```
 ## Tyrimas su Konstitucija.txt
 ![Konstitucijos Tyrimas](Tyrimas.png)
 
