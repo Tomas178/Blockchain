@@ -1,8 +1,9 @@
 # Blockchain
-Blockchain
+
 ## void PaddedInput(string& simboliu_seka)
 - prie **simboliu_seka** yra pridedamas string'as **"11111"**.
 
+## Maišos funkcija
 ```cpp
 string Maisos_funkcija(string& simboliu_seka){
 
@@ -37,6 +38,22 @@ string Maisos_funkcija(string& simboliu_seka){
     return oss.str();
 }
 ```
+- **string& simboliu_seka** – Tekstas, kuris yra hash'inamas.
+- **bitset<8> bit_map(size)** – Kiekvienas simbolis verčiamas į 8 bitų seką, bit_map(size) talpina simboliu_seka.length()*8 bitų.
+- **unsigned long long hashes[hash_parts] = {
+        0x6a09e667f3bcc908,
+        0x9b05688c2b3e6c1f,
+        0x1f83d9abfb41bd6b,
+        0x5be0cd19137e2179
+    };** – Keturios atsitiktines reikšmės po 64 bit'us.
+- **for(char c : simboliu_seka){
+        bit_map = bitset<8>(c);
+        bit_map.flip();
+        for(int i = 0; i < hash_parts; i++){
+            hashes[i] ^= bit_map.to_ulong() * 0x9e3779b97f4a7c15;
+            hashes[i] = (hashes[i] << 32) | (hashes[i] >> 32);
+        }
+    }** – **bit_map = bitset<8>(c)** konvertuoja simbolį į 8 bitų seką<br>**bit_map.flip()** paverčia 0 –> 1 ir 1 –> 0.<br>**hashes[i] ^= bit_map.to_ulong() * 0x9e3779b97f4a7c15** naudojmas XOR tarp hashes[i] reiksmes ir **bit_map.to_ulong() * 0x9e3779b97f4a7c15**, kur **bit_map.to_ulong()** yra konvertavimas į dešimtainį skaičių.<br>**hashes[i] = (hashes[i] << 32) | (hashes[i] >> 32)** - **hashes[i] << 32** pastuma 32  bit'us į kairę, o **hashes[i] >> 32** pastuma 32  bit'us į dešinę.
 ## Tyrimas su Konstitucija.txt
 ![Konstitucijos Tyrimas](Tyrimas.png)
 
