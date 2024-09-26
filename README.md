@@ -1,7 +1,7 @@
 # Blockchain
 Blockchain
 ## void PaddedInput(string& simboliu_seka)
-prie **simboliu_seka** yra pridedamas string'as **"11111"**.
+- prie **simboliu_seka** yra pridedamas string'as **"11111"**.
 
 ```cpp
 string Maisos_funkcija(string& simboliu_seka){
@@ -36,5 +36,7 @@ string Maisos_funkcija(string& simboliu_seka){
 
     return oss.str();
 }
-```cpp
+
+## Tyrimas su Konstitucija.txt
+![Konstitucijos Tyrimas](Tyrimas.png)
 
