@@ -56,7 +56,7 @@ string Maisos_funkcija(string& simboliu_seka){
  - **hashes[i] ^= bit_map.to_ulong() * 0x9e3779b97f4a7c15** naudojmas XOR tarp hashes[i] reiksmes ir **bit_map.to_ulong() * 0x9e3779b97f4a7c15**, kur **bit_map.to_ulong()** yra bitų sekos konvertavimas į dešimtainį skaičių.
  - **hashes[i] << 32** pastuma 32  bit'us į kairę.
  - **hashes[i] >> 32** pastuma 32  bit'us į dešinę.
- - **oss << hex << setw(16) << setfill('0') << hashes[i];** – į ostringstream objektą yra įrašoma 16 simbolių hex vertė iš *hashes[i]*(taip iteruoja 4 kartus iš viso), jei truksta simbolių, tada pripildoma tiek nulių kiek jų truksta.
+ - **oss << hex << setw(16) << setfill('0') << hashes[i];** – į ostringstream objektą yra įrašoma 16 simbolių hex vertė iš **hashes[i]**(taip iteruoja 4 kartus iš viso), jei truksta simbolių, tada pripildoma tiek nulių kiek jų truksta.
  ```cpp
     for(int i = 0; i < hash_parts; i++){
         oss << hex << setw(16) << setfill('0') << hashes[i];
