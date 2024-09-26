@@ -50,7 +50,7 @@ string Maisos_funkcija(string& simboliu_seka){
 ```
 - **for(char c : simboliu_seka)** – iteruoja per kiekvieną simbolį **simboliu_seka** string'e
 
- – **bit_map = bitset<8>(c)** konvertuoja simbolį į 8 bitų seką.
+ - **bit_map = bitset<8>(c)** konvertuoja simbolį į 8 bitų seką.
  - **bit_map.flip()** paverčia 0 –> 1 ir 1 –> 0.
  - **hashes[i] ^= bit_map.to_ulong() * 0x9e3779b97f4a7c15** naudojmas XOR tarp hashes[i] reiksmes ir **bit_map.to_ulong() * 0x9e3779b97f4a7c15**, kur **bit_map.to_ulong()** yra bitų sekos konvertavimas į dešimtainį skaičių.
  - **hashes[i] << 32** pastuma 32  bit'us į kairę.
