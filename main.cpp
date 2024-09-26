@@ -65,7 +65,9 @@ int main() {
     //cout << ConvertToBinary(simboliu_seka) << endl;
     //cout << Add_More_Bits(simboliu_seka) << endl;
     const auto start = chrono::high_resolution_clock::now();
-    //cout << Maisos_funkcija(simboliu_seka) << endl;
+    if(norimas_programos_veikimas == 1 || norimas_programos_veikimas == 2){
+        cout << Maisos_funkcija(simboliu_seka) << endl;
+    }
     const auto end = chrono::high_resolution_clock::now();
     cout << "Programos vykdymo laikas: " << chrono::duration_cast<chrono::milliseconds>(end - start).count()/1000 << "s" << endl;
     
