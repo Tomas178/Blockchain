@@ -15,7 +15,9 @@ string Failo_apdorojimas(string failo_pavadinimas);
 void poru_hashinimas_5_uzduociai();
 void poru_hashinimas_6_uzduociai();
 void Tikrinti_5_uzduoti();
-string Tikrinti_6_uzduoti_procentaliai();
+string Tikrinti_6_uzduoti_procentaliai_hex_lygmenyje();
+string hexToBinary(const string& hex);
+string Tikrinti_6_uzduoti_procentaliai_bitu_lygmenyje();
 void PaddedInput(string& simboliu_seka);
 
 extern int norimas_programos_veikimas;

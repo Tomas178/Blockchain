@@ -12,6 +12,8 @@ void poru_hashinimas_5_uzduociai(){
         hash2 = Maisos_funkcija(zodis2);
         RF << hash1 << " " << hash2 << endl;
     }
+    DF.close();
+    RF.close();
     cout << "Poru hashinimas atliktas sekmingai." << endl;
 }
 
@@ -27,6 +29,7 @@ void poru_hashinimas_6_uzduociai(){
         hash2 = Maisos_funkcija(zodis2);
         RF << hash1 << " " << hash2 << endl;
     }
+    DF.close();
     cout << "Poru hashinimas atliktas sekmingai." << endl;
 }
 
@@ -45,10 +48,11 @@ void Tikrinti_5_uzduoti(){
             cout << linecounter << " eiluteje sutapo hash'ai." << endl;
         }
     }
+    DF.close();
     cout << "Hash'ai nesutapo." << endl;	
 }
 
-string Tikrinti_6_uzduoti_procentaliai(){
+string Tikrinti_6_uzduoti_procentaliai_hex_lygmenyje(){
     string failas = "6Uzduotis_uzhashinta.txt";
     ofstream RF("6Uzduoties_uzhashinimas_procentaliai_hexu_lygmenyje.txt");
     ifstream DF(failas);
@@ -64,9 +68,48 @@ string Tikrinti_6_uzduoti_procentaliai(){
                 sutape_simboliai++;
             }
         }
-        if(sutape_simboliai > 0.0)
         RF << linecounter << " Eiluteje sutapo " << fixed << setprecision(2) << sutape_simboliai/64*100 << "% simboliu." << endl;
     }
+    DF.close();
+    RF.close();
+    return "Viskas OK";
+}
+
+string hexToBinary(const string& hex) {
+    string binary;
+    for (char hexChar : hex) {
+        unsigned int n;
+        stringstream ss;
+        ss << std::hex << hexChar;
+        ss >> std::hex >> n;
+        bitset<4> b(n);
+        binary += b.to_string();
+    }
+    return binary;
+}
+
+string Tikrinti_6_uzduoti_procentaliai_bitu_lygmenyje(){
+    string failas = "6Uzduotis_uzhashinta.txt";
+    ofstream RF("6Uzduoties_uzhashinimas_procentaliai_bitu_lygmenyje.txt");
+    ifstream DF(failas);
+    string line, hash1, hash2;
+    int linecounter = 0;
+    while(getline(DF, line)){
+        double sutape_simboliai = 0.0;
+        istringstream iss(line);
+        linecounter++;
+        iss >> hash1 >> hash2;
+        string hash_to_binary1 = hexToBinary(hash1);
+        string hash_to_binary2 = hexToBinary(hash2); 
+        for(int i = 0; i < hash_to_binary1.length(); i++){
+            if(hash_to_binary1[i] == hash_to_binary2[i]){
+                sutape_simboliai++;
+            }
+        }
+        RF << linecounter << " Eiluteje sutapo " << fixed << setprecision(2) << sutape_simboliai/256*100 << "% simboliu." << endl;
+    }
+    DF.close();
+    RF.close();
     return "Viskas OK";
 }
 
