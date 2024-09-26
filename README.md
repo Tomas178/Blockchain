@@ -64,6 +64,29 @@ string Maisos_funkcija(string& simboliu_seka){
 ```
 - **oss.str()** – grąžina reikšmę kaip string'ą.
 
+## Skaitymas iš failo
+```cpp
+string Failo_apdorojimas(string failo_pavadinimas){
+    ifstream DF(failo_pavadinimas);
+    failo_pavadinimas = "";
+
+    if(!DF.is_open()){
+        __throw_runtime_error("Nepavyko atidaryti failo");
+    }
+
+    string line;
+    while(getline(DF, line)){
+        failo_pavadinimas += line;
+        //cout << line << endl;
+    }
+    DF.close();
+    //cout << failo_pavadinimas;
+    return failo_pavadinimas;
+}
+```
+- **string failo_pavadinimas** – failo pavadinimas
+- Funkcija nuskaito visą failą kas eilute ir grąžina visa failo tekstą kaip string'ą.
+
 ## Tyrimas su Konstitucija.txt
 ![Konstitucijos Tyrimas](Tyrimas.png)
 
