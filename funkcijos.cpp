@@ -34,7 +34,7 @@ void poru_hashinimas_6_uzduociai(){
 }
 
 void Tikrinti_5_uzduoti(){
-    string failas = "6Uzduotis_uzhashinta.txt";
+    string failas = "5Uzduotis.txt";
     ifstream DF(failas);
     string line;
     int linecounter = 0;
@@ -56,6 +56,9 @@ string Tikrinti_6_uzduoti_procentaliai_hex_lygmenyje(){
     string failas = "6Uzduotis_uzhashinta.txt";
     ofstream RF("6Uzduoties_uzhashinimas_procentaliai_hexu_lygmenyje.txt");
     ifstream DF(failas);
+    double HexMax = 0.0;
+    double HexMin = 100.0;
+    double HexAvg = 0.0;
     string line, hash1, hash2;
     int linecounter = 0;
     while(getline(DF, line)){
@@ -69,7 +72,13 @@ string Tikrinti_6_uzduoti_procentaliai_hex_lygmenyje(){
             }
         }
         RF << linecounter << " Eiluteje sutapo " << fixed << setprecision(2) << sutape_simboliai/64*100 << "% simboliu." << endl;
+        HexMax = (sutape_simboliai/64*100 > HexMax) ? sutape_simboliai/64*100 : HexMax;
+        HexMin = (sutape_simboliai/64*100 < HexMin) ? sutape_simboliai/64*100 : HexMin;
+        HexAvg += sutape_simboliai/64*100;
     }
+    cout << "Max hex panasumas: " << fixed << setprecision(2) << HexMax << " %" << endl;
+    cout << "Min hex panasumas: " << fixed << setprecision(2) << HexMin << " %" << endl;
+    cout << "Vidutinis hex panasumas: " << fixed << setprecision(2) << HexAvg/linecounter << " %" << endl;
     DF.close();
     RF.close();
     return "Viskas OK";
@@ -133,6 +142,9 @@ string Tikrinti_6_uzduoti_procentaliai_bitu_lygmenyje(){
     ofstream RF("6Uzduoties_uzhashinimas_procentaliai_bitu_lygmenyje.txt");
     ifstream DF(failas);
     string line, hash1, hash2;
+    double BitMax = 0.0;
+    double BitMin = 100.0;
+    double BitAvg = 0.0;
     int linecounter = 0;
     while(getline(DF, line)){
         double sutape_simboliai = 0.0;
@@ -147,7 +159,13 @@ string Tikrinti_6_uzduoti_procentaliai_bitu_lygmenyje(){
             }
         }
         RF << linecounter << " Eiluteje sutapo " << fixed << setprecision(2) << sutape_simboliai/256*100 << "% simboliu." << endl;
+        BitMax = (sutape_simboliai/256*100 > BitMax) ? sutape_simboliai/256*100 : BitMax;
+        BitMin = (sutape_simboliai/256*100 < BitMin) ? sutape_simboliai/256*100 : BitMin;
+        BitAvg += sutape_simboliai/256*100;
     }
+    cout << "Max bitu panasumas: " << fixed << setprecision(2) << BitMax << " %" << endl;
+    cout << "Min bitu panasumas: " << fixed << setprecision(2) << BitMin << " %" << endl;
+    cout << "Vidutinis bitu panasumas: " << fixed << setprecision(2) << BitAvg/linecounter << " %" << endl;
     DF.close();
     RF.close();
     return "Viskas OK";
@@ -197,7 +215,7 @@ string Maisos_funkcija(string& simboliu_seka){
         bit_map.flip();
         for(int i = 0; i < hash_parts; i++){
             hashes[i] ^= bit_map.to_ulong() * 0x9e3779b97f4a7c15;
-            hashes[i] = (hashes[i] << 32) | (hashes[i] >> 32);
+            hashes[i] = (hashes[i] << 5) | (hashes[i] >> (64 - 5));
         }
     }
 

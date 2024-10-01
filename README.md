@@ -93,11 +93,11 @@ string Failo_apdorojimas(string failo_pavadinimas){
 ```cpp
 //Paprastas tekstas
 Iveskite failo pavadinima: 1uzduotis/Blockchain.txt
-cd3d257fc7d48a353c31ab941f562f22b8b71ab3cf29fe56fcd40e0127166244
+fb8dfb4068990bd3a449c97bc7fb0147765bd3bf58bafe023f4a5fed931a0072
 
 //Paprastas tekstas su šauktuku gale
 Iveskite failo pavadinima: 1uzduotis/Blockchain!.txt
-ce832f4b92e694eb16018a5c63ea1a00c67e5b28e76cab272e41c73aa30fbf95
+661f1034b7f479d39e9957415bb52b58dcda0fd2b38ac3e2feeb858bc7950deb
 
 //Paprastas tekstas ir paprastas tekstas su šauktuku gale Hex lygmenyje sutapo 4.69%, o bitų 53.91%
 
@@ -123,15 +123,26 @@ Iveskite failo pavadinima: 1uzduotis/tuscias.txt
 ## Hash'as, kuomet skiriasi per viena simbolį
 ```cpp
 Iveskite savo simboliu seka: Tomas
-0300d5f4f81798e6f20c5b1f20953df1768aea38f0eaec8532e9fe8a18d57097
+a9e0ee28320dabec3dbf2a1a09a2c9e6786d3800cd3d88190824298c9ff628e7
 
 Iveskite savo simboliu seka: tomas
-44118ca4e3a62586b51d024f3b248091319bb368eb5b51e575f8a7da0364cdf7
+5c61f26d574dc52ac83e365f6ce2a7208dec2445a87de6dffda535c9fab64621
 
 Iveskite savo simboliu seka: Tomas!
-f1403d985cdb646029c2988fadd7ea8bf9bd49fb29515bac1182d5e96d324f1e
+2bbdbd3fe5607e39a0453b78908c3f6b1a07782003640083132549aa5a101f4d
 ```
-- Hex lygmenyje sutapo **12.50%**, o bitų **56.25%**.
+- **"Tomas"** ir **"tomas"** Hex lygmenyje sutapo **6.25%**, o bitų **56.25%**.
+
+## Bitų ir Hex Max, Min ir Avg panašumai:
+```cpp
+Max bitu panasumas: 45.31 %
+Min bitu panasumas: 45.31 %
+Vidutinis bitu panasumas: 45.31 %
+
+Max hex panasumas: 6.25 %
+Min hex panasumas: 0.00 %
+Vidutinis hex panasumas: 4.68 %
+```
 
 ## Tyrimas su SHA256, SHA1 ir md5 hash algoritmais su 4 užduoties tekstu
 ```cpp
