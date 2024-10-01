@@ -99,7 +99,7 @@ cd3d257fc7d48a353c31ab941f562f22b8b71ab3cf29fe56fcd40e0127166244
 Iveskite failo pavadinima: 1uzduotis/Blockchain!.txt
 ce832f4b92e694eb16018a5c63ea1a00c67e5b28e76cab272e41c73aa30fbf95
 
-//Paprastas tekstas ir paprastas tekstas su šauktuku gale Hex lygmenyje sutapo 4.69%, o bitų lygmenyje sutapo 53.91%
+//Paprastas tekstas ir paprastas tekstas su šauktuku gale Hex lygmenyje sutapo 4.69%, o bitų 53.91%
 
 //Random tekstas su 1370 simboliais
 Iveskite failo pavadinima: 1uzduotis/random1370.txt
@@ -113,7 +113,7 @@ d023c3998b38f96f08a1668e7a347784d8deb7fafeb2c6a330e12be8bad1d211
 Iveskite failo pavadinima: 1uzduotis/random2001.txt
 99a0742f94375a3368acfac44cb5ff24ec2a4be39cca2e50a8495f5174f5b242
 
-//random2000.txt ir random2001.txt Hex lygmenyje sutapo 7.81%, o bitų lygmenyje sutapo 53.91%
+//random2000.txt ir random2001.txt Hex lygmenyje sutapo 7.81%, o bitų 53.91%
 
 //Tuscias failas
 Iveskite failo pavadinima: 1uzduotis/tuscias.txt
@@ -131,7 +131,7 @@ Iveskite savo simboliu seka: tomas
 Iveskite savo simboliu seka: Tomas!
 f1403d985cdb646029c2988fadd7ea8bf9bd49fb29515bac1182d5e96d324f1e
 ```
-- Hex lygmenyje sutapo: **12.50%**, o bitų lygmenyje sutapo: **56.25%**.
+- Hex lygmenyje sutapo **12.50%**, o bitų **56.25%**.
 
 ## Tyrimas su SHA256, SHA1 ir md5 hash algoritmais su 4 užduoties tekstu
 ```cpp
