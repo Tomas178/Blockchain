@@ -75,6 +75,46 @@ string Tikrinti_6_uzduoti_procentaliai_hex_lygmenyje(){
     return "Viskas OK";
 }
 
+void Mano_Hash_vs_Geriausi_hash(string simboliu_seka){
+    ifstream DF(simboliu_seka);
+    simboliu_seka = "";
+
+    if(!DF.is_open()){
+        __throw_runtime_error("Nepavyko atidaryti failo");
+    }
+
+    string line;
+    while(getline(DF, line)){
+        simboliu_seka += line;
+    }
+    DF.close();
+
+    auto My_hash_pradzia = chrono::high_resolution_clock::now();
+    string my_hash1 = Maisos_funkcija(simboliu_seka);
+    cout << "Mano hash reiksme: "<< my_hash1 << endl;
+    double My_hash_pabaiga = chrono::duration<double>(chrono::high_resolution_clock::now() - My_hash_pradzia).count();
+    cout << "Mano hash'o vykdymo laikas: " << My_hash_pabaiga << "s" << endl << endl;	
+
+    auto Sha256_pradzia = chrono::high_resolution_clock::now();
+    string sha256_hash = sha256(simboliu_seka);
+    cout << "SHA256 reiksme: "<< sha256_hash << endl;
+    double Sha256_pabaiga = chrono::duration<double>(chrono::high_resolution_clock::now() - Sha256_pradzia).count();
+    cout << "sha256 hash'o vykdymo laikas: " << Sha256_pabaiga << "s" << endl << endl;
+
+    auto Sha1_pradzia = chrono::high_resolution_clock::now();
+    string sha1_hash = sha1(simboliu_seka);
+    cout << "SHA1 reiksme: "<< sha1_hash << endl;
+    double Sha1_pabaiga = chrono::duration<double>(chrono::high_resolution_clock::now() - Sha1_pradzia).count();
+    cout << "sha1 hash'o vykdymo laikas: " << Sha1_pabaiga << "s" << endl << endl;
+
+    auto md5_pradzia = chrono::high_resolution_clock::now();
+    string md5_hash = md5(simboliu_seka);
+    cout << "md5 reiksme: "<< md5_hash << endl;
+    double md5_pabaiga = chrono::duration<double>(chrono::high_resolution_clock::now() - md5_pradzia).count();
+    cout << "md5 hash'o vykdymo laikas: " << md5_pabaiga << "s" << endl << endl;
+
+}
+
 string hexToBinary(const string& hex) {
     string binary;
     for (char hexChar : hex) {

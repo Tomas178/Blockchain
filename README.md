@@ -89,3 +89,18 @@ string Failo_apdorojimas(string failo_pavadinimas){
 ## Tyrimas su Konstitucija.txt
 ![Konstitucijos Tyrimas](Tyrimas.png)
 
+## Tyrimas su SHA256, SHA1 ir md5 hash algoritmais
+```cpp
+Mano hash reiksme: ee9facff4a66a832361d09e8bb6a26d9e662d89c3fec97fe0e5d448e7b8f834c
+Mano hash'o vykdymo laikas: 5.30728s
+
+SHA256 reiksme: db8315d5227fb8f5eb32a1972619ec6d72289ac52029930ea2303c31c94114ca
+sha256 hash'o vykdymo laikas: 1.80607s
+
+SHA1 reiksme: d6ba1a743d3f91b0e319d8ed2feb41e6c25ef424
+sha1 hash'o vykdymo laikas: 1.0268s
+
+md5 reiksme: 552f7bd519da433c19bddf78e44f1e15
+md5 hash'o vykdymo laikas: 1.21516s
+```
+

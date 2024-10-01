@@ -6,7 +6,7 @@ string failo_pavadinimas;
 
 int main() {
     cout << "Pasirinkite programos veikima:\n1. Vedimas rankiniu budu.\n2. Skaitymas is failo.\n3. 5 Uzduotis.\n4. Tikrinti 5 uzduoti.\n5. 6 Uzduotis.\n";
-    cout << "6. Tikrinti 6 uzduoti procentaliai Hex'u lygmenyje.\n7. Tikrinti 6 uzduoti procentaliai Bit'u lygmenyje." << endl;
+    cout << "6. Tikrinti 6 uzduoti procentaliai Hex'u lygmenyje.\n7. Tikrinti 6 uzduoti procentaliai Bit'u lygmenyje.\n8. Mano Hash vs sha256." << endl;
     cin >> norimas_programos_veikimas;
     switch(norimas_programos_veikimas){
         case 1: 
@@ -58,6 +58,13 @@ int main() {
             try{
                 Tikrinti_6_uzduoti_procentaliai_bitu_lygmenyje();
             } catch (const std::exception &err){
+                cout << "Ivyko klaida: " << err.what() << endl;
+            }
+        case 8:
+            try{
+                cout << "Iveskite failo pavadinima: "; cin >> simboliu_seka;
+                Mano_Hash_vs_Geriausi_hash(simboliu_seka);
+            } catch(const std::exception &err){
                 cout << "Ivyko klaida: " << err.what() << endl;
             }
     }
