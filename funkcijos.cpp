@@ -196,6 +196,7 @@ void PaddedInput(string& simboliu_seka){
 
 string Maisos_funkcija(string& simboliu_seka){
 
+    simboliu_seka += "!@$%ifwem())("")"; // Padruskinimas
     const unsigned int size = simboliu_seka.length();
     bitset<8> bit_map(size);
     string nauja_simboliu_seka;
