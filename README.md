@@ -89,6 +89,33 @@ string Failo_apdorojimas(string failo_pavadinimas){
 ## Tyrimas su Konstitucija.txt
 ![Konstitucijos Tyrimas](Tyrimas.png)
 
+## 2 Uzduotis
+```cpp
+//Paprastas tekstas
+Iveskite failo pavadinima: 1uzduotis/Blockchain.txt
+cd3d257fc7d48a353c31ab941f562f22b8b71ab3cf29fe56fcd40e0127166244
+
+//Paprastas tekstas su sauktuku
+Iveskite failo pavadinima: 1uzduotis/Blockchain!.txt
+ce832f4b92e694eb16018a5c63ea1a00c67e5b28e76cab272e41c73aa30fbf95
+
+//Random tekstas su 1370 simboliais
+Iveskite failo pavadinima: 1uzduotis/random1370.txt
+52b0d1debea0e9618a3274c94fac678a5a4da5bdcb2ad6adb27239af8f49c21f
+
+//Random tekstas su 2000 simboliais
+Iveskite failo pavadinima: 1uzduotis/random2000.txt
+d023c3998b38f96f08a1668e7a347784d8deb7fafeb2c6a330e12be8bad1d211
+
+//Random2000.txt su šauktuku viduryje teksto
+Iveskite failo pavadinima: 1uzduotis/random2001.txt
+99a0742f94375a3368acfac44cb5ff24ec2a4be39cca2e50a8495f5174f5b242
+
+//Tuscias failas
+Iveskite failo pavadinima: 1uzduotis/tuscias.txt
+9e5311ee3aaa152346d1b4f9cba69bc896ae658d4f202aef7e91f99f0b433e5d
+```
+
 ## Hash'as, kuomet skiriasi per viena simbolį
 ```cpp
 Iveskite savo simboliu seka: Tomas
