@@ -6,7 +6,7 @@ string failo_pavadinimas;
 
 int main() {
     cout << "Pasirinkite programos veikima:\n1. Vedimas rankiniu budu.\n2. Skaitymas is failo.\n3. 5 Uzduotis.\n4. Tikrinti 5 uzduoti.\n5. 6 Uzduotis.\n";
-    cout << "6. Tikrinti 6 uzduoti procentaliai Hex'u lygmenyje.\n7. Tikrinti 6 uzduoti procentaliai Bit'u lygmenyje.\n8. Mano Hash vs sha256." << endl;
+    cout << "6. Tikrinti 6 uzduoti procentaliai Hex'u lygmenyje.\n7. Tikrinti 6 uzduoti procentaliai Bit'u lygmenyje.\n8. Mano Hash vs sha256, sha1 ir md5." << endl;
     cin >> norimas_programos_veikimas;
     switch(norimas_programos_veikimas){
         case 1: 
@@ -60,6 +60,7 @@ int main() {
             } catch (const std::exception &err){
                 cout << "Ivyko klaida: " << err.what() << endl;
             }
+            break;
         case 8:
             try{
                 cout << "Iveskite failo pavadinima: "; cin >> simboliu_seka;
@@ -67,6 +68,7 @@ int main() {
             } catch(const std::exception &err){
                 cout << "Ivyko klaida: " << err.what() << endl;
             }
+            break;
     }
 
     //cout << ConvertToBinary(simboliu_seka) << endl;

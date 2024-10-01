@@ -89,18 +89,29 @@ string Failo_apdorojimas(string failo_pavadinimas){
 ## Tyrimas su Konstitucija.txt
 ![Konstitucijos Tyrimas](Tyrimas.png)
 
-## Tyrimas su SHA256, SHA1 ir md5 hash algoritmais
+## Hash'as, kuomet skiriasi per viena simbolį
 ```cpp
-Mano hash reiksme: ee9facff4a66a832361d09e8bb6a26d9e662d89c3fec97fe0e5d448e7b8f834c
-Mano hash'o vykdymo laikas: 5.30728s
+Iveskite savo simboliu seka: Tomas
+0300d5f4f81798e6f20c5b1f20953df1768aea38f0eaec8532e9fe8a18d57097
 
-SHA256 reiksme: db8315d5227fb8f5eb32a1972619ec6d72289ac52029930ea2303c31c94114ca
-sha256 hash'o vykdymo laikas: 1.80607s
+Iveskite savo simboliu seka: tomas
+44118ca4e3a62586b51d024f3b248091319bb368eb5b51e575f8a7da0364cdf7
+```
+- Hex lygmenyje sutapo: **12.50%**, o bitų lygmenyje sutapo: **56.25%**.
 
-SHA1 reiksme: d6ba1a743d3f91b0e319d8ed2feb41e6c25ef424
-sha1 hash'o vykdymo laikas: 1.0268s
+## Tyrimas su SHA256, SHA1 ir md5 hash algoritmais su 4 užduoties tekstu
+```cpp
+Iveskite failo pavadinima: 4Uzduotis.txt
+Mano hash reiksme: 7a478784be1ca430a2c522934f102adb72baf3e7cb969bfc9a856ff58ff58f4e
+Mano hash'o vykdymo laikas: 3.9072s
 
-md5 reiksme: 552f7bd519da433c19bddf78e44f1e15
-md5 hash'o vykdymo laikas: 1.21516s
+SHA256 reiksme: c166e3d51ddb70b494c9f29d3ddade1c381e54cb4281d89bba5f3935962f614b
+sha256 hash'o vykdymo laikas: 1.18258s
+
+SHA1 reiksme: 801a8883d801b3a876ad365b7dfa537d3e00edea
+sha1 hash'o vykdymo laikas: 0.976166s
+
+md5 reiksme: 0d0437d6e59de37e9e44e3bc9ca21546
+md5 hash'o vykdymo laikas: 0.980835s
 ```
 
