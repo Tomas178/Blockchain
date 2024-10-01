@@ -147,16 +147,16 @@ Vidutinis hex panasumas: 4.68 %
 ## Tyrimas su SHA256, SHA1 ir md5 hash algoritmais su 4 užduoties tekstu
 ```cpp
 Iveskite failo pavadinima: 4Uzduotis.txt
-Mano hash reiksme: 7a478784be1ca430a2c522934f102adb72baf3e7cb969bfc9a856ff58ff58f4e
-Mano hash'o vykdymo laikas: 3.9072s
+Mano hash reiksme: 407c88f34f4ce6ee97cd8db960aefff3d86d721b89a7f291bdbd0d23ad2f34b8
+Mano hash'o vykdymo laikas: 4.1486s
 
 SHA256 reiksme: c166e3d51ddb70b494c9f29d3ddade1c381e54cb4281d89bba5f3935962f614b
-sha256 hash'o vykdymo laikas: 1.18258s
+sha256 hash'o vykdymo laikas: 1.19493s
 
 SHA1 reiksme: 801a8883d801b3a876ad365b7dfa537d3e00edea
-sha1 hash'o vykdymo laikas: 0.976166s
+sha1 hash'o vykdymo laikas: 0.950222s
 
 md5 reiksme: 0d0437d6e59de37e9e44e3bc9ca21546
-md5 hash'o vykdymo laikas: 0.980835s
+md5 hash'o vykdymo laikas: 1.03567s
 ```
 
