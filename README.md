@@ -135,9 +135,9 @@ Iveskite savo simboliu seka: Tomas!
 
 ## Bitų ir Hex Max, Min ir Avg panašumai:
 ```cpp
-Max bitu panasumas: 45.31 %
-Min bitu panasumas: 45.31 %
-Vidutinis bitu panasumas: 45.31 %
+Max bitu panasumas: 72.27 %
+Min bitu panasumas: 57.23 %
+Vidutinis bitu panasumas: 65.09 %
 
 Max hex panasumas: 6.25 %
 Min hex panasumas: 0.00 %

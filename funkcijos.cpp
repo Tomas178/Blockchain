@@ -126,14 +126,9 @@ void Mano_Hash_vs_Geriausi_hash(string simboliu_seka){
 
 string hexToBinary(const string& hex) {
     string binary;
-    for (char hexChar : hex) {
-        unsigned int n;
-        stringstream ss;
-        ss << std::hex << hexChar;
-        ss >> std::hex >> n;
-        bitset<4> b(n);
-        binary += b.to_string();
-    }
+        for (std::size_t i = 0; i < hex.size(); ++i){
+            binary += bitset<8>(hex[i]).to_string();
+        }
     return binary;
 }
 
@@ -158,10 +153,11 @@ string Tikrinti_6_uzduoti_procentaliai_bitu_lygmenyje(){
                 sutape_simboliai++;
             }
         }
-        RF << linecounter << " Eiluteje sutapo " << fixed << setprecision(2) << sutape_simboliai/256*100 << "% simboliu." << endl;
-        BitMax = (sutape_simboliai/256*100 > BitMax) ? sutape_simboliai/256*100 : BitMax;
-        BitMin = (sutape_simboliai/256*100 < BitMin) ? sutape_simboliai/256*100 : BitMin;
-        BitAvg += sutape_simboliai/256*100;
+        //RF << hash_to_binary1 << " " << hash_to_binary2 << endl;
+        RF << linecounter << " Eiluteje sutapo " << fixed << setprecision(2) << sutape_simboliai/512*100 << "% simboliu." << endl;
+        BitMax = (sutape_simboliai/512*100 > BitMax) ? sutape_simboliai/512*100 : BitMax;
+        BitMin = (sutape_simboliai/512*100 < BitMin) ? sutape_simboliai/512*100 : BitMin;
+        BitAvg += sutape_simboliai/512*100;
     }
     cout << "Max bitu panasumas: " << fixed << setprecision(2) << BitMax << " %" << endl;
     cout << "Min bitu panasumas: " << fixed << setprecision(2) << BitMin << " %" << endl;
