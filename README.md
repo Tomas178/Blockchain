@@ -39,7 +39,7 @@ string Maisos_funkcija(string& simboliu_seka){
 }
 ```
 - **string& simboliu_seka** – Tekstas, kuris yra hash'inamas.
-- **Salt(Simboliu_seka)** – Grąžina "padruskintą" įvestį su nustatyta reikšmę.
+- **Salt(Simboliu_seka)** – Grąžina "padruskintą" įvestį pagal nustatyta reikšmę.
 - **bitset<8> bit_map(size)** – Kiekvienas simbolis verčiamas į 8 bitų seką, bit_map(size) talpina simboliu_seka.length()*8 bitų.
 ```cpp
     unsigned long long hashes[hash_parts] = {
