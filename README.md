@@ -7,6 +7,7 @@
 ```cpp
 string Maisos_funkcija(string& simboliu_seka){
 
+    Salt(simboliu_seka);
     const unsigned int size = simboliu_seka.length();
     bitset<8> bit_map(size);
     string nauja_simboliu_seka;
@@ -26,7 +27,7 @@ string Maisos_funkcija(string& simboliu_seka){
         bit_map.flip();
         for(int i = 0; i < hash_parts; i++){
             hashes[i] ^= bit_map.to_ulong() * 0x9e3779b97f4a7c15;
-            hashes[i] = (hashes[i] << 32) | (hashes[i] >> 32);
+            hashes[i] = (hashes[i] << 5) | (hashes[i] >> 59);
         }
     }
 
@@ -34,11 +35,11 @@ string Maisos_funkcija(string& simboliu_seka){
     for(int i = 0; i < hash_parts; i++){
         oss << hex << setw(16) << setfill('0') << hashes[i];
     }
-
     return oss.str();
 }
 ```
 - **string& simboliu_seka** – Tekstas, kuris yra hash'inamas.
+- **Salt(Simboliu_seka)** – Grąžina "padruskintą" įvestį su nustatyta reikšmę.
 - **bitset<8> bit_map(size)** – Kiekvienas simbolis verčiamas į 8 bitų seką, bit_map(size) talpina simboliu_seka.length()*8 bitų.
 ```cpp
     unsigned long long hashes[hash_parts] = {

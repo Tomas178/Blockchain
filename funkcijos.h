@@ -26,6 +26,7 @@ string Tikrinti_6_uzduoti_procentaliai_hex_lygmenyje();
 string hexToBinary(const string& hex);
 string Tikrinti_6_uzduoti_procentaliai_bitu_lygmenyje();
 void PaddedInput(string& simboliu_seka);
+void salt(string& simboliu_seka);
 void Mano_Hash_vs_Geriausi_hash(string simboliu_seka);
 
 extern int norimas_programos_veikimas;
